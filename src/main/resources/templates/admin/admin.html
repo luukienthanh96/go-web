@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<!--  admin-fragment (title, otherStaticResources, nav, mainContent)  -->
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{common/admin-template :: admin-fragment( ~{::title}, ~{:: #home-static-resources}, ~{:: #home-main-content}
+	 )}">
+
+<head>
+<title>Admin Page</title>
+
+<th:block id="home-static-resources">
+	<script type="text/javascript" src="js/admin/admin.js" ></script>
+	<link rel="stylesheet" type="text/css" href="css/admin/admin.css" />
+</th:block>
+
+</head>
+<body>
+
+	<div id="home-main-content">
+		<h2>Admin content</h2>
+		<div>Content of Admin Page</div>
+	</div>
+
+
+</body>
+</html>

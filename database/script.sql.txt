@@ -1,0 +1,34 @@
+drop schema IF EXISTS gobet;
+CREATE SCHEMA `gobet` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin ;
+use gobet;
+
+/* User */
+CREATE  TABLE users (
+  username VARCHAR(50) NOT NULL ,
+  password VARCHAR(225) NOT NULL ,
+  enabled TINYINT NOT NULL DEFAULT 1 ,
+  PRIMARY KEY (username));
+  
+  
+/* User Role */  
+CREATE TABLE user_roles (
+  user_role_id int(11) NOT NULL AUTO_INCREMENT,
+  username varchar(50) NOT NULL,
+  role varchar(45) NOT NULL,
+  PRIMARY KEY (user_role_id),
+  UNIQUE KEY uni_username_role (role,username),
+  KEY fk_username_idx (username),
+  CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES users (username));
+  
+  
+INSERT INTO users(username,password,enabled)
+VALUES ('admin','$2a$10$iGbH55CZksYYeRt99nuQ4.mI2mxdZxkPt9jS87AVm/CHqiVddmo7y', true);
+INSERT INTO users(username,password,enabled)
+VALUES ('mrbossi','$2a$10$UumZW/WzyJ0BlTK3NgISAe8BgPpWQIwbS9uwPaQW988LSP.oF4tHK', true);
+
+INSERT INTO user_roles (username, role)
+VALUES ('admin', 'ROLE_USER');
+INSERT INTO user_roles (username, role)
+VALUES ('admin', 'ROLE_ADMIN');
+INSERT INTO user_roles (username, role)
+VALUES ('mrbossi', 'ROLE_USER');
