@@ -13,6 +13,6 @@ import com.goweb.webapp.repository.model.UserRole;
  *
  */
 @Repository
-public interface UserRolesDao extends JpaRepository<UserRole, String> {
+public interface UserRolesDao extends JpaRepository<UserRole, Long> {
 
 }

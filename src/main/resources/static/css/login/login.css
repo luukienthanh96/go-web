@@ -52,7 +52,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-	color: #6a7dfe;
+	color: #00967f;
 	color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
 	color: -o-linear-gradient(left, #21d4fd, #b721ff);
 	color: -moz-linear-gradient(left, #21d4fd, #b721ff);
@@ -173,17 +173,10 @@ iframe {
 
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
-.txt1 {
+.lbl-signup {
 	font-family: Poppins-Regular;
 	font-size: 13px;
 	color: #666666;
-	line-height: 1.5;
-}
-
-.txt2 {
-	font-family: Poppins-Regular;
-	font-size: 13px;
-	color: #333333;
 	line-height: 1.5;
 }
 
@@ -253,7 +246,7 @@ iframe {
 .input100 {
 	font-family: Poppins-Regular;
 	font-size: 15px;
-	color: #555555;
+	color: #999999;
 	line-height: 1.2;
 	display: block;
 	width: 100%;
@@ -346,7 +339,7 @@ iframe {
 }
 
 .btn-show-pass:hover {
-	color: #6a7dfe;
+	color: #00967f;
 	color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
 	color: -o-linear-gradient(left, #21d4fd, #b721ff);
 	color: -moz-linear-gradient(left, #21d4fd, #b721ff);

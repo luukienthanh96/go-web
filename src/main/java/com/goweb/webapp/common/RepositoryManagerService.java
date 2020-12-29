@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.goweb.webapp.repository.service.UserManagerRepositoryService;
+import com.goweb.webapp.repository.service.UtilityManagerRepositoryService;
 
 /**
  * @author Kraken
@@ -19,6 +20,9 @@ public class RepositoryManagerService {
 	@Autowired
 	private UserManagerRepositoryService userManagerRepositoryService;
 
+	@Autowired
+	private UtilityManagerRepositoryService utilityManagerRepositoryService;
+	
 	/**
 	 * @return the userManagerRepositoryService
 	 */
@@ -34,4 +38,20 @@ public class RepositoryManagerService {
 			@Qualifier("userManagerRepositoryService") UserManagerRepositoryService userManagerRepositoryService) {
 		this.userManagerRepositoryService = userManagerRepositoryService;
 	}
+
+	/**
+	 * @return the utilityManagerRepositoryService
+	 */
+	public UtilityManagerRepositoryService getUtilityManagerRepositoryService() {
+		return utilityManagerRepositoryService;
+	}
+
+	/**
+	 * @param utilityManagerRepositoryService the utilityManagerRepositoryService to set
+	 */
+	public void setUtilityManagerRepositoryService(@Qualifier("utilityManagerRepositoryService") 
+	UtilityManagerRepositoryService utilityManagerRepositoryService) {
+		this.utilityManagerRepositoryService = utilityManagerRepositoryService;
+	}
+	
 }

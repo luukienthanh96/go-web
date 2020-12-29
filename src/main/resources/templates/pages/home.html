@@ -2,7 +2,7 @@
 
 <!--  main-fragment (title, otherStaticResources, nav, mainContent)  -->
 <html xmlns:th="http://www.thymeleaf.org"
-	th:replace="~{common/template :: main-fragment( ~{::title}, ~{:: #home-static-resources}, ~{:: #home-main-content}
+	th:replace="~{common/template :: main-fragment( ~{::title}, ~{:: #home-static-resources}, ~{:: #home-content}
 	 )}">
 
 <head>
@@ -15,10 +15,169 @@
 
 </head>
 <body>
-
-	<div id="home-main-content">
-		<h2>Home content</h2>
-		<div>Content of Home Page</div>
+	<div id="home-content" class="container-fluid row" style="margin-top: 1rem;">
+		<div class="col-md-6">
+			<div class="container-fluid home-layout-portlet">
+				<div class="home-portlet-title">
+					<div class="d-flex p-2">
+						<span class="d-flex p-2">Trường hợp đặc biệt</span>
+					</div>
+				</div>
+				<div class="home-portlet-content">
+					<div class="d-flex p-2">
+						<div class="col-md-1">
+							<i class="fas fa-star fa-2x"></i>
+						</div>
+						<div class="col-md-11">
+							<ul style="padding-left: 15px; padding-bottom: 0px;">
+								<li style="padding: 5px 0px;"><code>Tên đài, kiểu
+										đánh có thể nhập tiếng việt có dấu hoặc không dấu</code>
+									<p>
+										<code>Ví dụ:</code>
+										<br> Chánh 34 đầu 20 ngàn, chanh34dau20n sẽ cho kết quả
+										như nhau
+									</p></li>
+								<li style="padding: 5px 0px;"><code>Điểm cược</code><br>
+									- n, ng, ngan, ngàn: 10n, 10ng hệ thống hiểu 10<br> -
+									trieu, triệu: tn11dau10trieu hệ thống sẽ hiểu là 10,000</li>
+								<li style="padding: 5px 0px;"><code>Số cược</code><br>
+									- keo, kéo, den, đến: 10đến 90 hệ thống sẽ hiểu là:
+									10,20,30,40,50,60,70,80,90<br> - lonchuc, nhochuc,
+									ledonvi, chandonvi, nhole, lenho, nhochan, channho, lonle,
+									lonchan, lele, lechan, chanchan, chanle, congiap, lechuc,
+									chanchuc</li>
+								<li style="padding: 5px 0px;"><code>Tên đài</code><br>
+									- 4d, 4dai, 3d, 3dai, 2d, 2dai, dc, dp, chanh, chinh, phu,
+									dchanh, dchinh, dphu, daichanh, daiphu, dch</li>
+								<li style="padding: 5px 0px;"><code>Cú pháp bd</code><br>
+									- sẽ nhập là Bình Dương vào thứ 6, các ngày khác là bao đảo</li>
+								<li style="padding: 5px 0px;"><code>da, dv, dav nếu
+										có 2 đài hệ thống sẽ hiểu là đá xiên</code>
+									<p>
+										<code>Ví dụ:</code>
+										<br> vl.sbe45.54da20 hệ thống sẽ hiểu là đá xiên:
+										vl.sbe45.54dx20
+									</p></li>
+								<li style="padding: 5px 0px;"><code>Cú pháp dx tự
+										hiểu đảo xỉu chủ nếu là số 3c</code>
+									<p>
+										<code>Ví dụ:</code>
+										<br> 123dx10 hệ thống sẽ hiểu là đá xiên: 123dxc10
+									</p></li>
+								<li style="padding: 5px 0px;"><code>Tự thêm đài đá
+										xiên khi có 1 đài</code><br>
+									<p>
+										<code>Ví dụ: Hôm nay có 3 đài: Thành phố, Đồng Tháp, Cà
+											Mau</code>
+										<br> - tp12.21dx10 sẽ là: tp.dt12.21dx10<br> -
+										dt12.21dx10 sẽ là: tp.dt12.21dx10<br> - dc12.21dx10 sẽ
+										là: tp.dt12.21dx10<br> - dp12.21dx10 sẽ là:
+										tp.dt12.21dx10<br>
+									</p></li>
+								<li style="padding: 5px 0px;"><code>Bao, bao đảo
+										liên tục</code>
+									<p>
+										<code>Ví dụ:</code>
+										<br> vt1234b1db1b2db2b3db3 hệ thống sẽ hiểu: vt bao 1n số
+										1234, vt bao đảo 1n số 1234, vt bao 2n số 234, vt bao đảo 2n
+										số 234, vt bao 3n số 34, vt bao đảo 3n số 34
+									</p></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="container-fluid home-layout-portlet">
+				<div class="home-portlet-title">
+					<div class="d-flex p-2">
+						<div class="col">
+							<span class="d-flex p-2">Hướng dẫn</span>
+						</div>
+						<div class="col order-12">
+							<ul class="nav nav-pills" id="pills-tab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" id="pills-guide-tab1" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Hướng dẫn</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link"id="pills-guide-tab2" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Tên đài</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-guide-tab3" data-toggle="pill" href="#pills-contact"role="tab" aria-controls="pills-contact" aria-selected="false">Tên kiểu</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="home-portlet-content">
+					<div class="d-flex p-2">
+						<div class="col-md-1">
+							<i class="fas fa-book fa-2x"></i>
+						</div>
+						<div class="col-md-11">
+							<div id="home-guide-tab1">
+								<p>
+									Có nhiều
+									<code>cú pháp</code>
+									với các kiểu nhận tin khác nhau
+								</p>
+								<p>
+									<code>Lưu ý:</code>
+									TẤT CẢ TIN NHẮN KHÔNG PHẢI XUỐNG HÀNG KHI KẾT THÚC CƯỢC
+								</p>
+								<ul style="padding-left: 15px; padding-bottom: 0px;">
+									<li style="padding: 5px 0px;"><code>1. Đài-số-kiểu</code><br>
+										- Nhập tên đài trước, số muốn đánh, kiểu đánh, số điểm.
+										<p>
+											<code>Ví dụ:</code>
+											<br> Dc 52.70 da60. 938 xc150. 779 xc300 xd40. 277xc130
+											xd10. 573 x240 xd3. 73 dau300 dui200n. 425.119 xc130 xd10. dp
+											119x20. 779.277 xc200 xd10
+										</p></li>
+									<li style="padding: 5px 0px;"><code>2. Số-kiểu-đài</code><br>
+										- Nhập số muốn đánh trước, kiểu đánh, số điểm, tên đài.
+										<p>
+											<code>Ví dụ:</code>
+											<br> 52.70 da60. 938 xc150. 779 xc300 xd40. 277xc130
+											xd10. 573 x240 xd3. 73 dau300 dui200n. 425.119 xc130 xd10. dp
+											119x20. 779.277 xc200 xd10 Dc
+										</p></li>
+									<li style="padding: 5px 0px;"><code>3.
+											Đài-số-kiểu-AB</code> <br> - Nhập tên đài trước, số muốn đánh,
+										kiểu đánh, số điểm. <br> - Tương tự như kiểu 1 nhưng chấp
+										nhận a đầu, b đuôi, ab đầu đuôi.
+										<p>
+											<code>Ví dụ:</code>
+											<br> Dc 79a10 32ab20
+										</p></li>
+									<li style="padding: 5px 0px;"><code>4.
+											Số-kiểu-đài-AB</code> <br> - Nhập số trước, kiểu muốn đánh, số
+										điểm, đài.<br> - Tương tự như kiểu 2 nhưng chấp nhận a
+										đầu, b đuôi, ab đầu đuôi.
+										<p>
+											<code>Ví dụ:</code>
+											<br> 79a10 32ab20 Dc
+										</p></li>
+								</ul>
+								<p>
+									<span class="m-badge m-badge--wide m-badge--danger m-badge--rounded">CHÚ
+										Ý:</span>&nbsp;&nbsp; Nhập đúng đài và kiểu muốn cược theo tên đã
+									định nghĩa ở menu bên cạnh
+								</p>
+							</div>
+							<div id="home-guide-tab2">
+								<span>Tab 2</span>
+							</div>
+							<div id="home-guide-tab3">
+								<span>Tab 3</span>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 </body>

@@ -1,3 +1,31 @@
 body {
-	background-color: lightblue;
+	background-color: #f8f9fa;
+}
+/*------------------------------------------------------------------
+[ Common Css]*/
+#icon-awe-green{
+	color: #00967f;
+}
+/*------------------------------------------------------------------
+[ Home Page ]*/
+.home-layout-portlet {
+	display: block;
+	background: transparent;
+	padding: 0 5px;
+	box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.16);
+	border-radius: 5px;
+}
+
+.home-portlet-title {
+	font-family:Calibri;
+	font-size:14px;
+	font-weight:bold;
+	color:#000;
+	border-bottom: 1px solid #999999
+}
+
+.home-portlet-content {
+	font-family:Calibri;
+	font-size:14px;
+	color:#000;
 }
