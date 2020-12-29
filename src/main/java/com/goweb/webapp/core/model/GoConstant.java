@@ -9,4 +9,5 @@ package com.goweb.webapp.core.model;
  */
 public class GoConstant {
 
+	public static final String METADATA_LOOKUP_CHANNEL = "LOOKUP_CHANNEL";
 }

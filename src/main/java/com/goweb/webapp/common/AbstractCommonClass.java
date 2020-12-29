@@ -25,7 +25,7 @@ import com.goweb.webapp.core.model.RepositoryCommonConstant;
 public abstract class AbstractCommonClass {
 
 	protected final Logger logger = LoggerFactory.getLogger(getClass());
-	private static Gson gson = new GsonBuilder().setDateFormat("dd/MM/yyyy").setPrettyPrinting().create();
+	public static Gson gson = new GsonBuilder().setDateFormat("dd/MM/yyyy").setPrettyPrinting().create();
 	public static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 	
 	@PersistenceContext(unitName = "entityManagerSqlServer")

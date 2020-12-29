@@ -167,7 +167,16 @@
 								</p>
 							</div>
 							<div id="home-guide-tab2">
-								<span>Tab 2</span>
+								<table border="1">
+									<tr>
+										<th>First Name</th>
+										<th>Last Name</th>
+									</tr>
+									<tr th:each="home : ${lstHome}">
+										<td th:utext="${home.lookupCodeId}">...</td>
+										<td th:utext="${home.value}">...</td>
+									</tr>
+								</table>
 							</div>
 							<div id="home-guide-tab3">
 								<span>Tab 3</span>
