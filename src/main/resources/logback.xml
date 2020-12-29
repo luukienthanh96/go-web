@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>F:/Study/Freelancer/GoBet Project/Imp/logs/gensis-api.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<charset>UTF-8</charset>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</pattern>
+		</encoder>
+		
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>F:/Study/Freelancer/GoBet Project/Imp/logs/gensis-api_%i.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<maxFileSize>10MB</maxFileSize>
+			<maxHistory>50</maxHistory>
+		</rollingPolicy>
+	</appender>
+
+	<root level="info">
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</root>
+	
+</configuration>
