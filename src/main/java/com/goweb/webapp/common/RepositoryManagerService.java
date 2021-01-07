@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.goweb.webapp.repository.service.ClientManagerRepositoryService;
 import com.goweb.webapp.repository.service.UserManagerRepositoryService;
 import com.goweb.webapp.repository.service.UtilityManagerRepositoryService;
 
@@ -19,6 +20,9 @@ public class RepositoryManagerService {
 
 	@Autowired
 	private UserManagerRepositoryService userManagerRepositoryService;
+	
+	@Autowired
+	private ClientManagerRepositoryService clientManagerRepositoryService;
 
 	@Autowired
 	private UtilityManagerRepositoryService utilityManagerRepositoryService;
@@ -37,6 +41,21 @@ public class RepositoryManagerService {
 	public void setUserManagerRepositoryService(
 			@Qualifier("userManagerRepositoryService") UserManagerRepositoryService userManagerRepositoryService) {
 		this.userManagerRepositoryService = userManagerRepositoryService;
+	}
+
+	/**
+	 * @return the clientManagerRepositoryService
+	 */
+	public ClientManagerRepositoryService getClientManagerRepositoryService() {
+		return clientManagerRepositoryService;
+	}
+
+	/**
+	 * @param clientManagerRepositoryService the clientManagerRepositoryService to set
+	 */
+	public void setClientManagerRepositoryService(@Qualifier("clientManagerRepositoryService") 
+			ClientManagerRepositoryService clientManagerRepositoryService) {
+		this.clientManagerRepositoryService = clientManagerRepositoryService;
 	}
 
 	/**

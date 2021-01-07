@@ -105,10 +105,8 @@ public class CommonUtil {
 	
 	public static void main(String[] args) {
 
-		
 	
 	}
-	
 	
 	public static void removeTokenMap(){
 		tokenExpiryMap = new HashMap<>();

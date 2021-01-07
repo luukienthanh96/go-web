@@ -91,7 +91,11 @@
 			<groupId>com.zaxxer</groupId>
 			<artifactId>HikariCP</artifactId>
 		</dependency>
-		
+		<dependency>
+			<groupId>com.vladmihalcea</groupId>
+			<artifactId>hibernate-types-52</artifactId>
+			<version>2.9.10</version>
+		</dependency>
 		<!-- My SQL Connector -->
 		<dependency>
 			<groupId>mysql</groupId>

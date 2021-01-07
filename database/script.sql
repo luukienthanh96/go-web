@@ -42,6 +42,12 @@ CREATE  TABLE client (
   enabled TINYINT NOT NULL DEFAULT 1 ,
   client_serve_user VARCHAR(50) NOT NULL,
   client_config VARCHAR(500) NOT NULL,
+  regis_dt VARCHAR(8) NOT NULL,
+  regis_time VARCHAR(6) NOT NULL,
+  regis_by VARCHAR(50) NOT NULL,
+  updated_dt VARCHAR(8) NOT NULL,
+  updated_time VARCHAR(6) NOT NULL,
+  updated_by VARCHAR(50) NOT NULL,
   PRIMARY KEY (id));
   
   
@@ -67,6 +73,14 @@ VALUES ('LOOKUP_DESIGNATION_CODE','agent', 'vn', 'agent', '1');
 INSERT INTO metadata(lookupCode, lookupCodeId, lang, value, orderBy)
 VALUES ('LOOKUP_CHANNEL','dt', 'vn', 'Đồng Tháp', '3');
 
+INSERT INTO metadata(lookupCode, lookupCodeId, lang, value, orderBy)
+VALUES ('LOOKUP_CHANNEL','bp', 'vn', 'Bình Phước', '4');
+
+INSERT INTO metadata(lookupCode, lookupCodeId, lang, value, orderBy)
+VALUES ('LOOKUP_CHANNEL','binhphuoc', 'vn', 'Bình Phước', '4');
+
+INSERT INTO metadata(lookupCode, lookupCodeId, lang, value, orderBy)
+VALUES ('LOOKUP_TYPE_HOME','dau', 'vn', '2D-Đầu', '1');
 
 INSERT INTO users(username,password,enabled)
 VALUES ('admin','$2a$10$iGbH55CZksYYeRt99nuQ4.mI2mxdZxkPt9jS87AVm/CHqiVddmo7y', true);

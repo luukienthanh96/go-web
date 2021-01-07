@@ -8,6 +8,12 @@ body {
 }
 /*------------------------------------------------------------------
 [ Home Page ]*/
+.thanh111{
+	color: red;
+}
+#home-content .thanh111{
+	color: blue;
+}
 .home-layout-portlet {
 	display: block;
 	background: transparent;

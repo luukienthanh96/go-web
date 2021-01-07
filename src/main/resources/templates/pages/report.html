@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<!--  main-fragment (title, otherStaticResources, nav, mainContent)  -->
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{common/template :: main-fragment( ~{::title}, ~{:: #home-static-resources}, ~{:: #home-content}
+	 )}">
+
+<head>
+<title>Home Page</title>
+
+<th:block id="home-static-resources">
+	<script type="text/javascript" src="js/home.js" ></script>
+	<link rel="stylesheet" type="text/css" href="css/custom/custom.css" />
+</th:block>
+
+</head>
+<body>
+	<div id="home-content" class="container-fluid row" style="margin-top: 1rem;">
+		<h1> Reports Pages</h1>	
+	</div>
+
+</body>
+</html>

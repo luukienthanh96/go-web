@@ -55,6 +55,7 @@ public class DateUtils {
 	
 	// START Loi.Pham 2017-10-12
 	public static String yyyyMMdd = "yyyyMMdd";
+	public static String hhmmss = "hhmmss";
 	// END Loi.Pham 2017-10-12
 
 	public static String yyyyMMdd_HHmmss = "yyyyMMdd_HHmmss";
@@ -878,11 +879,32 @@ public class DateUtils {
 	public static Date removeTimeFromDate(Date date) {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
-	    cal.set(Calendar.HOUR_OF_DAY, 0);
-	    cal.set(Calendar.MINUTE, 0);
-	    cal.set(Calendar.SECOND, 0);
-	    cal.set(Calendar.MILLISECOND, 0);
-	    return cal.getTime();
+		cal.set(Calendar.HOUR_OF_DAY, 0);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.SECOND, 0);
+		cal.set(Calendar.MILLISECOND, 0);
+		return cal.getTime();
 	}
-
+	
+	public static Date getSystemDate() {
+		Calendar calendar = Calendar.getInstance();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(yyyyMMddHHmmss);
+		String dt = simpleDateFormat.format(calendar.getTime());
+		
+		return convertDate(dt, yyyyMMdd);
+	}
+	
+	public static String getSystemDateStr() {
+		Calendar calendar = Calendar.getInstance();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(yyyyMMdd);
+		return simpleDateFormat.format(calendar.getTime());
+		
+	}
+	
+	public static String getSystemTimeStr() {
+		Calendar calendar = Calendar.getInstance();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(hhmmss);
+		return simpleDateFormat.format(calendar.getTime());
+		
+	}
 }
